@@ -1,6 +1,7 @@
 # Docker Robert2
 
 Robert2 / Loxya container
+[https://github.com/Robert-2/Robert2](https://github.com/Robert-2/Robert2)
 
 ## Examples
 
@@ -8,6 +9,8 @@ Robert2 / Loxya container
 
 ```sh
 docker run -p 80:80 \
+    -v /yourLocalLoxyaDataFolder/settings.json:/var/www/html/src/App/Config/settings.json \
+    -v /yourLocalLoxyaDataFolder/data:/var/www/html/data \
     routmoute/robert2
 ```
 
@@ -18,6 +21,8 @@ services:
   loxya:
     image: routmoute/robert2
     volumes:
+      - ./settings.json:/var/www/html/src/App/Config/settings.json
+      - ./data:/var/www/html/data
     ports:
       - 80:80
 ```
@@ -31,7 +36,7 @@ services:
   database:
     image: mariadb
     volumes:
-      - ./loxya_database:/var/lib/mysql
+      - ./database:/var/lib/mysql
     environment:
       MARIADB_DATABASE: loxya
       MARIADB_USER: loxya
