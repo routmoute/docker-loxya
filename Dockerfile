@@ -10,7 +10,7 @@ RUN apt update && apt -y upgrade && \
 
 # PREPARE PHP
 RUN docker-php-ext-install -j$(nproc) bcmath gettext intl pdo_mysql
-RUN mv $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini
+#RUN mv $PHP_INI_DIR/php.ini-production $PHP_INI_DIR/php.ini
 RUN a2enmod rewrite
 
 # DOWNLOAD AND INSTALL LOXYA

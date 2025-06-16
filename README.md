@@ -1,5 +1,6 @@
-# Docker Loxya
+# Docker Robert2
 
+Robert2 / Loxya container
 
 ## Examples
 
@@ -14,7 +15,7 @@ docker run -p 80:80 \
 
 ```yaml
 services:
-  dolibarr:
+  loxya:
     image: routmoute/robert2
     volumes:
     ports:
@@ -30,18 +31,20 @@ services:
   database:
     image: mariadb
     volumes:
-      - ./dolibarr_database:/var/lib/mysql
+      - ./loxya_database:/var/lib/mysql
     environment:
       MARIADB_DATABASE: loxya
       MARIADB_USER: loxya
       MARIADB_PASSWORD: mysqlPassword
       MARIADB_RANDOM_ROOT_PASSWORD: 1
       MARIADB_AUTO_UPGRADE: 1
-  dolibarr:
+  loxya:
     image: routmoute/robert2
     depends_on:
       - database
     volumes:
+      - ./settings.json:/var/www/html/src/App/Config/settings.json
+      - ./data:/var/www/html/data
     ports:
       - 80:80
 ```
