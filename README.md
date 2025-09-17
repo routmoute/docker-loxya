@@ -1,7 +1,7 @@
-# Docker Robert2
+# Docker Loxya
 
-Robert2 / Loxya container
-[https://github.com/Robert-2/Robert2](https://github.com/Robert-2/Robert2)
+Loxya container
+[https://github.com/Loxya/Loxya](https://github.com/Loxya/Loxya)
 
 ## Examples
 
@@ -11,7 +11,7 @@ Robert2 / Loxya container
 docker run -p 80:80 \
     -v /yourLocalLoxyaDataFolder/settings.json:/var/www/html/src/App/Config/settings.json \
     -v /yourLocalLoxyaDataFolder/data:/var/www/html/data \
-    routmoute/robert2
+    routmoute/loxya
 ```
 
 ### Docker-compose
@@ -19,7 +19,7 @@ docker run -p 80:80 \
 ```yaml
 services:
   loxya:
-    image: routmoute/robert2
+    image: routmoute/loxya
     volumes:
       - ./settings.json:/var/www/html/src/App/Config/settings.json
       - ./data:/var/www/html/data
@@ -44,7 +44,7 @@ services:
       MARIADB_RANDOM_ROOT_PASSWORD: 1
       MARIADB_AUTO_UPGRADE: 1
   loxya:
-    image: routmoute/robert2
+    image: routmoute/loxya
     depends_on:
       - database
     volumes:
