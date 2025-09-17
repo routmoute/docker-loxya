@@ -46,6 +46,6 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           platforms: ${{ steps.buildx.outputs.platforms }}
           push: true
-          tags: routmoute/robert2:${{ steps.get_tag_name.outputs.VERSION }},routmoute/robert2:latest
+          tags: routmoute/loxya:${{ steps.get_tag_name.outputs.VERSION }},routmoute/loxya:latest
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache

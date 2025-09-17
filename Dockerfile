@@ -19,7 +19,7 @@ RUN a2enmod rewrite
 # DOWNLOAD AND INSTALL LOXYA
 ARG LOXYA_VERSION
 RUN cd / && \
-    wget https://github.com/Robert-2/Robert2/releases/download/${LOXYA_VERSION}/Loxya-${LOXYA_VERSION}.zip && \
+    wget https://github.com/Loxya/Loxya/releases/download/${LOXYA_VERSION}/Loxya-${LOXYA_VERSION}.zip && \
     unzip Loxya-${LOXYA_VERSION}.zip && \
     rm Loxya-${LOXYA_VERSION}.zip && \
     rm -r /var/www/html && \
