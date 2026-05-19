@@ -1,10 +1,10 @@
 ARG ARCH=
-ARG PHP_VERSION=8.3
-ARG LOXYA_VERSION=1.2.1
+ARG PHP_VERSION=8.5
+ARG LOXYA_VERSION=1.3.2
 
 FROM ${ARCH}php:${PHP_VERSION}-apache
 RUN apt update && apt -y upgrade && \
-    apt -y install unzip wget libicu-dev libfreetype-dev libjpeg62-turbo-dev libpng-dev libwebp-dev && \
+    apt -y install unzip wget libicu-dev libfreetype-dev libjpeg62-turbo-dev libpng-dev libwebp-dev weasyprint && \
     apt autoremove -y && \
     rm -rf /var/lib/apt/lists/*
 
