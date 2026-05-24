@@ -1,6 +1,6 @@
 ARG ARCH=
 ARG PHP_VERSION=8.5
-ARG LOXYA_VERSION=1.3.2
+ARG LOXYA_VERSION=1.3.5
 
 FROM ${ARCH}php:${PHP_VERSION}-apache
 RUN apt update && apt -y upgrade && \
