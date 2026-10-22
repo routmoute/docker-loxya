@@ -1,3 +1,5 @@
+# Archived: you can use official repo: [https://hub.docker.com/r/loxya/loxya](https://hub.docker.com/r/loxya/loxya)
+
 # Docker Loxya
 
 Loxya container
